@@ -1,0 +1,127 @@
+/* =================================================================
+   DESIGN TOKENS PREMIUM: SDR DASHBOARD 2.0
+   Sistema de Design Moderno e Corporativo
+   ================================================================= */
+
+:root {
+  /* Cores Primárias - Paleta Corporativa Moderna */
+  --primary: 234 89% 74%;      /* Azul Elétrico #6366F1 */
+  --primary-dark: 234 89% 64%; /* Azul Profundo #4F46E5 */
+  --primary-light: 234 89% 84%; /* Azul Claro #A5B4FC */
+  
+  --accent: 142 76% 36%;       /* Verde Esmeralda #059669 */
+  --accent-light: 142 76% 46%; /* Verde Claro #10B981 */
+  
+  --success: 158 64% 52%;      /* Verde Sucesso #22C55E */
+  --warning: 43 96% 56%;       /* Amarelo Âmbar #F59E0B */
+  --danger: 0 84% 60%;         /* Vermelho Coral #EF4444 */
+  --info: 199 89% 48%;         /* Azul Informação #0EA5E9 */
+
+  /* Cores Neutras - Escala Sofisticada */
+  --bg: 0 0% 100%;             /* Branco Puro #FFFFFF */
+  --bg-secondary: 240 4.8% 95.9%; /* Cinza Ultra Claro #F8FAFC */
+  --bg-tertiary: 240 5.9% 90%;    /* Cinza Claro #E2E8F0 */
+  
+  --text-primary: 222.2 84% 4.9%;   /* Preto Suave #020617 */
+  --text-secondary: 215.4 16.3% 46.9%; /* Cinza Médio #64748B */
+  --text-muted: 215.4 16.3% 56.9%;     /* Cinza Claro #94A3B8 */
+  --text-inverse: 0 0% 100%;            /* Branco #FFFFFF */
+  
+  /* Superfícies e Elevações */
+  --surface: 0 0% 100%;        /* Branco Puro #FFFFFF */
+  --surface-elevated: 0 0% 100%; /* Branco com sombra */
+  --surface-glass: 0 0% 100% / 0.8; /* Vidro fosco */
+  --surface-overlay: 0 0% 0% / 0.5;  /* Overlay escuro */
+  
+  /* Bordas e Contornos */
+  --border: 214.3 31.8% 91.4%; /* Cinza Borda #E2E8F0 */
+  --border-strong: 215.4 16.3% 86.9%; /* Cinza Forte #CBD5E1 */
+  --border-interactive: 234 89% 74%;   /* Azul Interativo */
+  
+  /* Campos de Input */
+  --input-bg: 0 0% 100%;       /* Branco */
+  --input-border: 214.3 31.8% 91.4%; /* Cinza Claro */
+  --input-focus: 234 89% 74%;  /* Azul Focus */
+  
+  /* Estados Interativos */
+  --hover: 240 4.8% 95.9%;     /* Cinza Hover */
+  --active: 240 5.9% 90%;      /* Cinza Active */
+  --focus-ring: 234 89% 74%;   /* Azul Focus Ring */
+  
+  /* Geometria e Espaçamento */
+  --radius-sm: 6px;            /* Pequeno */
+  --radius-md: 8px;            /* Médio */
+  --radius-lg: 12px;           /* Grande */
+  --radius-xl: 16px;           /* Extra Grande */
+  --radius-2xl: 24px;          /* Muito Grande */
+  
+  /* Sombras Modernas */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  
+  /* Gradientes Modernos */
+  --gradient-primary: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-dark)) 100%);
+  --gradient-accent: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(var(--accent-light)) 100%);
+  --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+  
+  /* Animações */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Tema Escuro Moderno */
+.dark {
+  /* Cores Primárias Ajustadas */
+  --primary: 234 89% 74%;      /* Azul Elétrico mantido */
+  --primary-dark: 234 89% 84%; /* Azul mais claro no escuro */
+  --primary-light: 234 89% 64%; /* Azul mais escuro no escuro */
+  
+  --accent: 142 76% 46%;       /* Verde mais claro */
+  --accent-light: 142 76% 56%; /* Verde ainda mais claro */
+  
+  /* Backgrounds Escuros */
+  --bg: 222.2 84% 4.9%;        /* Preto Suave #020617 */
+  --bg-secondary: 217.2 32.6% 17.5%; /* Azul Escuro #1E293B */
+  --bg-tertiary: 215 27.9% 16.9%;    /* Azul Médio #334155 */
+  
+  /* Textos Invertidos */
+  --text-primary: 0 0% 100%;   /* Branco */
+  --text-secondary: 215.4 16.3% 73.9%; /* Cinza Claro #CBD5E1 */
+  --text-muted: 215.4 16.3% 56.9%;     /* Cinza Médio #94A3B8 */
+  --text-inverse: 222.2 84% 4.9%;      /* Preto */
+  
+  /* Superfícies Escuras */
+  --surface: 217.2 32.6% 17.5%; /* Azul Escuro */
+  --surface-elevated: 215 27.9% 16.9%; /* Azul Médio */
+  --surface-glass: 217.2 32.6% 17.5% / 0.8; /* Vidro escuro */
+  --surface-overlay: 0 0% 0% / 0.7;  /* Overlay mais escuro */
+  
+  /* Bordas Escuras */
+  --border: 215 27.9% 26.9%;   /* Cinza Escuro #475569 */
+  --border-strong: 215.4 16.3% 36.9%; /* Cinza Médio #64748B */
+  
+  /* Inputs Escuros */
+  --input-bg: 215 27.9% 16.9%; /* Azul Médio */
+  --input-border: 215 27.9% 26.9%; /* Cinza Escuro */
+  
+  /* Estados Escuros */
+  --hover: 215 27.9% 26.9%;    /* Cinza Hover */
+  --active: 215 27.9% 36.9%;   /* Cinza Active */
+}
+
+/* Variáveis de Compatibilidade com Sistema Antigo */
+:root {
+  --card: var(--surface);
+  --popover: var(--surface-elevated);
+  --foreground: var(--text-primary);
+  --muted: var(--bg-secondary);
+  --ring: var(--focus-ring);
+  --input: var(--input-bg);
+  --secondary: var(--bg-secondary);
+  --radius: var(--radius-lg);
+}
+
