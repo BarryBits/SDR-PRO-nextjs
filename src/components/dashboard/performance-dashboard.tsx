@@ -8,11 +8,11 @@ import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { 
+import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
   BarChart, Bar, PieChart, Pie, Cell, AreaChart, Area
 } from 'recharts';
-import { 
+import {
   Clock, MessageSquare, Users, Calendar, TrendingUp, TrendingDown,
   AlertTriangle, CheckCircle, Activity, Zap, Target, Timer
 } from 'lucide-react';
@@ -83,11 +83,11 @@ export default function PerformanceDashboard() {
 
   useEffect(() => {
     fetchAllMetrics();
-    
+
     // Configurar refresh automático a cada 5 minutos
     const interval = setInterval(fetchAllMetrics, 5 * 60 * 1000);
     setRefreshInterval(interval);
-    
+
     return () => {
       if (interval) clearInterval(interval);
     };
@@ -98,23 +98,23 @@ export default function PerformanceDashboard() {
       setLoading(true);
       const token = localStorage.getItem('token');
       const headers = { 'Authorization': `Bearer ${token}` };
-      
+
       // Buscar métricas de performance
-      const performanceResponse = await fetch(`/api/v1/dashboard/metrics/performance?period=${period}`, { headers });
+      const performanceResponse = await fetch(`/api/dashboard/metrics/performance?period=${period}`, { headers });
       if (performanceResponse.ok) {
         const performanceData = await performanceResponse.json();
         setPerformanceMetrics(performanceData);
       }
 
       // Buscar métricas de funil
-      const funnelResponse = await fetch(`/api/v1/dashboard/metrics/funnel?period=${period}`, { headers });
+      const funnelResponse = await fetch(`/api/dashboard/metrics/funnel?period=${period}`, { headers });
       if (funnelResponse.ok) {
         const funnelData = await funnelResponse.json();
         setFunnelMetrics(funnelData);
       }
 
       // Buscar métricas de consultores
-      const consultantResponse = await fetch(`/api/v1/dashboard/metrics/consultants?period=${period}`, { headers });
+      const consultantResponse = await fetch(`/api/dashboard/metrics/consultants?period=${period}`, { headers });
       if (consultantResponse.ok) {
         const consultantData = await consultantResponse.json();
         setConsultantMetrics(consultantData);
@@ -142,7 +142,7 @@ export default function PerformanceDashboard() {
     return 'text-red-600';
   };
 
-  const activityData = performanceMetrics ? 
+  const activityData = performanceMetrics ?
     Object.entries(performanceMetrics.activity_distribution).map(([hour, count]) => ({
       hour: `${hour}h`,
       messages: count

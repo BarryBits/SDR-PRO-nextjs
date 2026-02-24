@@ -86,7 +86,7 @@ export default function SettingsPage() {
   const loadSettings = async () => {
     setLoading(true);
     try {
-      const response = await fetch('/api/v1/settings');
+      const response = await fetch('/api/settings');
       if (response.ok) {
         const data = await response.json();
         setSettings(prev => ({ ...prev, ...data }));
@@ -104,7 +104,7 @@ export default function SettingsPage() {
 
   const loadStatus = async () => {
     try {
-      const response = await fetch('/api/v1/settings/status');
+      const response = await fetch('/api/settings/status');
       if (response.ok) {
         const data = await response.json();
         setStatus(data);
@@ -121,7 +121,7 @@ export default function SettingsPage() {
 
     setValidatingKey(true);
     try {
-      const response = await fetch('/api/v1/settings/validate-openai-key', {
+      const response = await fetch('/api/settings/validate-openai-key', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ api_key: key })
@@ -155,7 +155,7 @@ export default function SettingsPage() {
 
     setSaving(true);
     try {
-      const response = await fetch('/api/v1/settings', {
+      const response = await fetch('/api/settings', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(settings)
@@ -194,7 +194,7 @@ export default function SettingsPage() {
 
     setTesting(true);
     try {
-      const response = await fetch('/api/v1/settings/test-prompt', {
+      const response = await fetch('/api/settings/test-prompt', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

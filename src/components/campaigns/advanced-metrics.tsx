@@ -8,12 +8,12 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { 
+import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
   LineChart, Line, PieChart, Pie, Cell, FunnelChart, Funnel, LabelList
 } from 'recharts';
-import { 
-  TrendingUp, TrendingDown, Users, MessageSquare, Calendar, 
+import {
+  TrendingUp, TrendingDown, Users, MessageSquare, Calendar,
   Target, Clock, AlertCircle, CheckCircle, XCircle, Download
 } from 'lucide-react';
 
@@ -60,13 +60,13 @@ export default function AdvancedMetrics({ clientId }: AdvancedMetricsProps) {
         period,
         ...(selectedCampaign !== 'all' && { campaign_id: selectedCampaign })
       });
-      
-      const response = await fetch(`/api/v1/dashboard/metrics/campaigns?${params}`, {
+
+      const response = await fetch(`/api/dashboard/metrics/campaigns?${params}`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
       });
-      
+
       if (response.ok) {
         const data = await response.json();
         setMetrics(data.campaigns || []);
@@ -81,12 +81,12 @@ export default function AdvancedMetrics({ clientId }: AdvancedMetricsProps) {
   const exportReport = async () => {
     try {
       const params = new URLSearchParams({ period, format: 'json' });
-      const response = await fetch(`/api/v1/dashboard/export/report?${params}`, {
+      const response = await fetch(`/api/dashboard/export/report?${params}`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
       });
-      
+
       if (response.ok) {
         const data = await response.json();
         const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
@@ -314,7 +314,7 @@ export default function AdvancedMetrics({ clientId }: AdvancedMetricsProps) {
                     <div>
                       <CardTitle className="text-lg">{campaign.campaign_name}</CardTitle>
                       <CardDescription>
-                        Template: {campaign.template_name} • 
+                        Template: {campaign.template_name} •
                         Status: <Badge variant={campaign.status === 'COMPLETED' ? 'default' : 'secondary'}>
                           {campaign.status}
                         </Badge>
